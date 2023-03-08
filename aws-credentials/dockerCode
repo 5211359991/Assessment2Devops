@@ -1,0 +1,12 @@
+#Build Docker Stuff
+docker build --rm -t survey -f Dockerfile .
+docker run --rm -it --mount type=bind,target=//root/code,source=/$(pwd) mvtools
+docker run --rm -it --mount type=bind,target=/root/code,source=$(pwd) mvtools
+docker run --rm -it --mount type=bind,target=//root/code,source=/"$(pwd)" mvtools
+
+
+
+
+#Change Directory
+$ cd "/c/Users/WoodfieldC/OneDrive - Kantar/Desktop/DevOps"
+$ cd "/Users/WoodfieldC/OneDrive - Kantar/Desktop/DevOps"
