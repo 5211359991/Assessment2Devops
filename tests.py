@@ -1,4 +1,5 @@
-from extract import get_input, remove_duplicate_UID,remove_empty_lines,Capitalize_Array,Validate_Q3,write_csv,print_to_command
+from extract import get_input
+from transform import remove_duplicate_UID,remove_empty_lines,Capitalize_Array,Validate_Q3
 
 def test_input_is_list():
     # Arrange
@@ -73,6 +74,15 @@ def test_duplicates():
     #assert
     assert expected == output
 
+def test_empty_lines():
+    # Arrange
+    expected = [['1', 'A'], ['2', 'D'], ['3', 'G']]
+
+    #act
+    output = remove_empty_lines([["1","A"],["",""],["",""],["2","D"],["",""],["",""],["3","G"]])
+
+    #assert
+    assert expected == output
 
 def test_Q3_Validation():
     # Arrange
@@ -89,17 +99,19 @@ def test_Q3_Validation():
     #assert
     assert expected == output
 
-print(test_input_columns_correct())
-print(test_output_columns_correct())
-print(test_input_is_list())
-print(test_output_is_list())
-print(test_output_columns_Caps())
-print(test_duplicates())
-print(test_Q3_Validation())
+
+# print(test_input_columns_correct())
+# print(test_output_columns_correct())
+# print(test_input_is_list())
+# print(test_output_is_list())
+# print(test_output_columns_Caps())
+# print(test_duplicates())
+# # print(test_Q3_Validation())
+# print(test_empty_lines())
 
 # NOTE when making the output tests I realized that my code capitalized the column headers for firstname and last name... changed code to for i in range(1,len(array)): from for i in range(len(array)): Howeve this is testing data as opposed to testing the function itself!
 # Note when Testing whether or not the columns were in capitals - very convoluted - basically tsting whther or not capitalise is doing its job so not really sure of the value of incorporating this into my programming? Basically feels like a lot of work to re-writ ethe function in another way which is pretty pointless?
 # note but for ensuring that duplicates weer removed - made the test much simpler and ensured that just the core function of the function was being tested
 # note when writing the test for checking for integers I got teh following error message ValueError: invalid literal for int() with base 10: '10.1'. This led down a new path which was testing to ensure that the inputs are integers and not decimals. i didnt write this test but it shows how useful TDD can be as it can ensure a higher quality of coding
 
-print(Validate_Q3([["user_id","first_name","last_name","answer_1","answer_2","answer_3"],['1', 'Alan','Duncan', '2', '1', '11']]))
+# print(Validate_Q3([["user_id","first_name","last_name","answer_1","answer_2","answer_3"],['1', 'Alan','Duncan', '2', '1', '11']]))

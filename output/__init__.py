@@ -11,5 +11,5 @@ def write_csv(array):
 
 def print_to_command(csvfilename):
     array = get_input(csvfilename)
-    for i in range(len(array)): 
+    for i in range(len(array)):
            print(*(array[i]))
