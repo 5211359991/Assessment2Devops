@@ -1,11 +1,27 @@
-#Build Docker Stuff
+#DOCKER
+
+#Build Docker Image
 docker build --rm -t survey -f Dockerfile .
+
+#see all docker images
+docker image ls
+
+#remove docker image
+docker image rm xyz (use the image Id after calling docker image ls)
+
+
+#Running Docker
+#the following commands didnt work on Roz's laptop
 docker run --rm -it --mount type=bind,target=//root/code,source=/$(pwd) mvtools
 docker run --rm -it --mount type=bind,target=/root/code,source=$(pwd) mvtools
-docker run --rm -it --mount type=bind,target=//root/code,source=/"$(pwd)" mvtools
 
+#However... This one below worked on Rozs laptop
+docker run --rm -it --mount type=bind,target=//root/code,source=/"$(pwd)" survey
 
+#COMMAND LINE
 
+#present working directory
+pwd
 
 #Change Directory
 $ cd "/c/Users/WoodfieldC/OneDrive - Kantar/Desktop/DevOps"
