@@ -1,6 +1,6 @@
 #DOCKER
 
-#Build Docker Image
+#1 Build Docker Image
 docker build --rm -t survey -f Dockerfile .
 
 #see all docker images
@@ -10,13 +10,19 @@ docker image ls
 docker image rm xyz (use the image Id after calling docker image ls)
 
 
-#Running Docker
+#2 Running Docker
 #the following commands didnt work on Roz's laptop
 docker run --rm -it --mount type=bind,target=//root/code,source=/$(pwd) mvtools
 docker run --rm -it --mount type=bind,target=/root/code,source=$(pwd) mvtools
 
-#However... This one below worked on Rozs laptop
+#2 However... This one below worked on Rozs laptop
 docker run --rm -it --mount type=bind,target=//root/code,source=/"$(pwd)" survey
+
+#Terraform
+cd code/terraform-iacf/
+terraform init
+terraform plan
+terraform apply
 
 #COMMAND LINE
 
@@ -26,3 +32,18 @@ pwd
 #Change Directory
 $ cd "/c/Users/WoodfieldC/OneDrive - Kantar/Desktop/DevOps"
 $ cd "/Users/WoodfieldC/OneDrive - Kantar/Desktop/DevOps"
+
+#Testing
+pytest
+pytest --cov=.
+
+
+
+#git
+git status
+git commit -m "MESSAGE"
+#Create a new branch
+git checkout -b "pytests"
+mkdir .github
+cd. github/
+mkdir workflows
