@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       s3_bucket:
-        description: 'mvws9-chris'
+        description: 'enter s3 bucket below... (mvws9-chris)'
         required: true
         type: string
 
