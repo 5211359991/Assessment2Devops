@@ -45,5 +45,7 @@ git commit -m "MESSAGE"
 #Create a new branch
 git checkout -b "pytests"
 mkdir .github
+#git pull (if changes are amde on github.com)
+git pull
 cd. github/
 mkdir workflows

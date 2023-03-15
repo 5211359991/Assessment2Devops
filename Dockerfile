@@ -1,9 +1,11 @@
 FROM amazon/aws-cli:latest
 
-# COPY ./build/*.crt /etc/pki/ca-trust/source/anchors/cert.ca
+##NotTHIS####COPY ./build/*.crt /usr/local/share/ca-certificates/cert.ca
+#COPY ./build/*.crt /etc/pki/ca-trust/source/anchors/cert.ca
 
-# RUN update-ca-trust enable 
-# RUN update-ca-trust extract
+#RUN update-ca-trust enable 
+#RUN update-ca-trust extract
+#####NOTTHIS ### RUN update-ca-certificates
 
 RUN yum update -y \
     && yum install -y yum-utils shadow-utils \
@@ -15,11 +17,3 @@ ADD aws-credentials /root/.aws/credentials
 
 WORKDIR /root
 ENTRYPOINT /bin/bash
-
-##NotTHIS####COPY ./build/*.crt /usr/local/share/ca-certificates/cert.ca
-#COPY ./build/*.crt /etc/pki/ca-trust/source/anchors/cert.ca
-
-#RUN update-ca-trust enable 
-#RUN update-ca-trust extract
-#####NOTTHIS ### RUN update-ca-certificates
-
