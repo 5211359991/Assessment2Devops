@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       s3_bucket:
-        description: 'The S3 bucket name'
+        description: 'mvws9-chris'
         required: true
         type: string
 
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: python-survey-app
+        working-directory: mv-devops-surveyapp
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v3
