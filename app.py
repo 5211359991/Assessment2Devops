@@ -9,8 +9,8 @@ def input(csvfilename):
     array = remove_empty_lines(array)
     array = Capitalize_Array(array)
     array = Validate_Q3(array)
-    write_csv(array)
-    print_to_command('./clean_results.csv')
+    #write_csv(array)
+    #print_to_command('./clean_results.csv')
     return(array)
 
 
