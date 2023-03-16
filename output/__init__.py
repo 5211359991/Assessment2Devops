@@ -9,7 +9,7 @@ def write_csv(array):
            writer.writerow(array[i])
 
 
-def print_to_command(csvfilename):
-    array = get_input(csvfilename)
+def print_to_command(array):
+    # array = get_input(csvfilename)
     for i in range(len(array)):
            print(*(array[i]))

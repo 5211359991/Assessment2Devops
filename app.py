@@ -14,4 +14,5 @@ def input(csvfilename):
     return(array)
 
 
-input('./results.csv')
+a = input('./results.csv')
+print_to_command(a)
