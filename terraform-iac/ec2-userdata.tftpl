@@ -40,8 +40,8 @@ mkdir -p /root/code
 aws s3 cp s3://${s3_bucket}/code.zip /tmp/code.zip
 unzip /tmp/code.zip -d /root/code/
 aws s3 cp s3://${s3_bucket}/results.csv /root/code/results.csv
-python3 /root/code/app.py > /root/code/clean_results.txt
-aws s3 cp /root/code/clean_results.txt s3://${s3_bucket}/clean_results.txt
+python3 /root/code/app.py
+aws s3 cp /root/code/clean_results.csv s3://${s3_bucket}/clean_results.csv
 EOT
 cat <<EOT >> /etc/cron.d/mvws9
 * * * * * root /bin/bash /root/mvws9.sh
