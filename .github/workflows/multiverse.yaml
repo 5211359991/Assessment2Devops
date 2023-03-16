@@ -29,6 +29,10 @@ jobs:
       run: pytest
       working-directory: .
 
+    - name: Run Pytest Coverage
+      run: pytest --cov=.
+      working-directory: .
+
   terraform:
     name: Run Terraform
     runs-on: ubuntu-latest
