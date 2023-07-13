@@ -4,7 +4,7 @@ def remove_duplicate_UID(array):
 
     for i in range(len(array)): 
         loop_test = (array[i][0])
-        if loop_test not in all_ID:
+        ifd loop_test not in all_ID:
             array_duplicates_removed.append(array[i])
         all_ID.append(loop_test)
 
