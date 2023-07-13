@@ -62,16 +62,16 @@ resource "aws_vpc_endpoint_route_table_association" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-    bucket_prefix = "mvws9-chris"
+    bucket_prefix = "mvws9-miloslav"
     force_destroy = true
     tags = {
         Name = "multiverse"
     }
 }
 
-resource "aws_s3_bucket_acl" "this" {
-    bucket = aws_s3_bucket.this.id
-    acl = "private"
+#resource "aws_s3_bucket_acl" "this" {
+    #bucket = aws_s3_bucket.this.id
+    #acl = "private"
 }
 
 resource "aws_s3_object" "this" {
